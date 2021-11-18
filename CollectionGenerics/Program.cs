@@ -10,6 +10,7 @@ namespace CollectionGenerics
         {
             // Del 1 - Stack
 
+            Console.WriteLine("--Stack--");
             Stack<Employee> StackEmp = new Stack<Employee>();
 
             Employee E1 = new Employee() { ID = 101, Name = "Lina", Gender = "Female", Salary = 20000 };
@@ -24,7 +25,7 @@ namespace CollectionGenerics
             StackEmp.Push(E4);
             StackEmp.Push(E5);
 
-            Console.WriteLine("Retrive Using Push Method");
+            Console.WriteLine("Retrieve Using Push Method:");
             foreach (var Employee in StackEmp)
             {
                 Console.WriteLine("Id = {0}, Name = {1}, Gender = {2}, Salary = {3}", Employee.ID, Employee.Name, Employee.Gender, Employee.Salary);
@@ -32,8 +33,10 @@ namespace CollectionGenerics
                 Console.WriteLine();
             }
             Console.WriteLine("------------------------------");
+            Console.ReadKey();
+            Console.Clear();
 
-            Console.WriteLine("Retrive Using Pop Method");
+            Console.WriteLine("Retrieve Using Pop Method:");
             Employee EM1 = StackEmp.Pop();
             Console.WriteLine("Id = {0}, Name = {1}, Gender = {2}, Salary = {3}", EM1.ID, EM1.Name, EM1.Gender, EM1.Salary);
             Console.WriteLine("The items in the stack = " + StackEmp.Count);
@@ -72,17 +75,22 @@ namespace CollectionGenerics
             StackEmp.Push(EM4);
             StackEmp.Push(EM5);
             Console.WriteLine("------------------------------");
+            Console.ReadKey();
+            Console.Clear();
 
-            Console.WriteLine("Retrive Using Peek Method");
+            Console.WriteLine("Retrieve Using Peek Method:");
             Employee eS = StackEmp.Peek();
-            
-            foreach (var Employee in StackEmp)
-            {
-                Console.WriteLine(eS.ID + " - " + eS.Name + " - " + eS.Gender + " - " + eS.Salary);
-                Console.WriteLine("Total items = " + StackEmp.Count);
-                Console.WriteLine();
-            }
+            Console.WriteLine(eS.ID + " - " + eS.Name + " - " + eS.Gender + " - " + eS.Salary);
+            Console.WriteLine("Total items = " + StackEmp.Count);
+
+            Employee eS1 = StackEmp.Peek();
+            Console.WriteLine(eS1.ID + " - " + eS1.Name + " - " + eS1.Gender + " - " + eS1.Salary);
+            Console.WriteLine("Total items = " + StackEmp.Count);
             Console.WriteLine("------------------------------");
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("Retrieve Using Contains Method:");
             if (StackEmp.Contains(EM3))
             {
                 Console.WriteLine("Em3 is in the Stack.");
@@ -94,6 +102,11 @@ namespace CollectionGenerics
 
             // Del 2 - List
             Console.WriteLine("------------------------------------------------------");
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("--List--");
+            Console.WriteLine("Retrieve Using Find Method:");
             List<Employee> listEmp = new List<Employee>();
 
             listEmp.Add(E1);
@@ -104,7 +117,7 @@ namespace CollectionGenerics
 
             if (listEmp.Contains(E2))
             {
-                Console.WriteLine("Employee 2 object exist in the List.");
+                Console.WriteLine("Employee 2 object exists in the List.");
             }
             else
             {
@@ -114,12 +127,16 @@ namespace CollectionGenerics
             Employee emp = listEmp.Find(e => e.Gender == "Male");
             Console.WriteLine(emp.ID + " - " + emp.Name + " - " + emp.Gender + " - " + emp.Salary);
             Console.WriteLine("------------------------------");
+            Console.ReadKey();
+            Console.Clear();
 
+            Console.WriteLine("Retrieve Using Find All Method:");
             List<Employee> findemp = listEmp.FindAll(f => f.Gender == "Male");
             foreach (Employee item in findemp)
             {
                 Console.WriteLine(item.ID + " - " + item.Name + " - " + item.Gender + " - " + item.Salary);
             }
+            Console.WriteLine("------------------------------");
 
             Console.ReadKey();
         }
